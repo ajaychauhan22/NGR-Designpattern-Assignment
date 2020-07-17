@@ -1,0 +1,19 @@
+- Describe what is the primary problem you try to solve. 
+	1. Reading of file from different format.
+	2. Validation of card type
+	3. Creating Object of appropriate card
+
+- Describe what design pattern(s) you use how (use diagrams).
+	1. Used Factory pattern to read file as in future it might be different type of file like (text, csv, pdf etc)
+	2. Used Factory pattern for card builder
+	3. Used Builder pattern for creating card object
+	4. We can also use Singleton pattern for Utility or Factory classes.
+	CODE FLOW-
+		MAIN CLASS ==> CreditCardFileReaderFactory(To get get CreditCardFileReader object) ==> Got CreditCardTextFileReader 
+==> Read the file and received List<String> from CreditCardTextFileReader ==> Called CreditCardUtils for get CreditCard object for each record ==>
+CreditCardBuilderFactory to get CCBuilder object ==> From CCBuilder - build the appropriate credit card and return to Main.
+	
+- Describe what is achieved using design pattern(s).
+	1. Open for enhancement - If in future any other type file will be used to read the record then It can be add via factory pattern, same with Credit card types.
+	2. Solved Building the object by Builder pattern.
+	3. Get a proper enhance able/maintainable solution with proper architecture.
